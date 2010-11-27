@@ -11,11 +11,13 @@ public class TransportCompany extends Place
   	// Nothing special to do
   }
 
+  @Override
   public int getPlaceType()
   {
     return PlaceType.TRANSPORT_COMPANY;
   }
 
+  @Override
   protected void write(DataOutputStream out)
       throws IOException
   {
@@ -34,6 +36,7 @@ public class TransportCompany extends Place
     super.read(in);
   }
 
+  @Override
   public String toString()
   {
     return "Transport company '"+getName()+"'";

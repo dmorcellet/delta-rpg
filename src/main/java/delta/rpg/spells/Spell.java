@@ -36,6 +36,7 @@ public class Spell
     return _level;
   }
 
+  @Override
   public String toString()
   {
     StringBuilder sb=new StringBuilder();

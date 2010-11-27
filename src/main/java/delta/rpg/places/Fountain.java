@@ -11,11 +11,13 @@ public class Fountain extends Place
     // Nothing to do !!
   }
 
+  @Override
   public int getPlaceType()
   {
     return PlaceType.FOUNTAIN;
   }
 
+  @Override
   protected void write(DataOutputStream out)
       throws IOException
   {
@@ -34,6 +36,7 @@ public class Fountain extends Place
     super.read(in);
   }
 
+  @Override
   public String toString()
   {
     return "Fountain '"+getName()+"'";

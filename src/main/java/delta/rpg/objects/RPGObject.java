@@ -108,6 +108,7 @@ public abstract class RPGObject
     _value.read(in);
   }
 
+  @Override
   public String toString()
   {
     return _name;

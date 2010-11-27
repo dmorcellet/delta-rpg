@@ -6,23 +6,39 @@ import java.io.IOException;
 
 import delta.rpg.base.Amount;
 
+/**
+ * A bank account.
+ * @author dm
+ */
 public class BankAccount
 {
   private int _id;
   private Amount _amount;
 
+  /**
+   * Constructor.
+   * @param id Identifier.
+   */
   public BankAccount(int id)
   {
     _id=id;
     _amount=new Amount();
   }
 
+  /**
+   * Get the identifier of this account.
+   * @return an identifier.
+   */
   public int getID()
   {
     return _id;
   }
 
-  public Amount getAmount()
+  /**
+   * Get the balance of this account.
+   * @return an amount.
+   */
+  public Amount getBalance()
   {
     return _amount;
   }
@@ -41,6 +57,7 @@ public class BankAccount
     _amount.read(in);
   }
 
+  @Override
   public String toString()
   {
     return "Bank Account "+_id+" ("+_amount+")";

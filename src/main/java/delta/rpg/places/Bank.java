@@ -19,6 +19,7 @@ public class Bank extends Place
     _accounts=new HashMap<Integer, BankAccount>();
   }
 
+  @Override
   public int getPlaceType()
   {
     return PlaceType.BANK;
@@ -42,6 +43,7 @@ public class Bank extends Place
     _accounts.remove(Integer.valueOf(id));
   }
 
+  @Override
   protected void write(DataOutputStream out)
       throws IOException
   {
@@ -81,6 +83,7 @@ public class Bank extends Place
     }
   }
 
+  @Override
   public String toString()
   {
     return "Bank '"+getName()+"'";

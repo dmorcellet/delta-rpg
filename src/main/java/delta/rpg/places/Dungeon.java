@@ -11,11 +11,13 @@ public class Dungeon extends Place
     // Nothing to do !!
   }
 
+  @Override
   public int getPlaceType()
   {
     return PlaceType.DUNGEON;
   }
 
+  @Override
   protected void write(DataOutputStream out)
       throws IOException
   {
@@ -34,6 +36,7 @@ public class Dungeon extends Place
     super.read(in);
   }
 
+  @Override
   public String toString()
   {
     return "Dungeon '"+getName()+"'";

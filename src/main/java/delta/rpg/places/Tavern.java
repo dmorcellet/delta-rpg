@@ -11,11 +11,13 @@ public class Tavern extends Place
   	// Nothing special to do
   }
 
+  @Override
   public int getPlaceType()
   {
     return PlaceType.TAVERN;
   }
 
+  @Override
   protected void write(DataOutputStream out)
       throws IOException
   {
@@ -34,6 +36,7 @@ public class Tavern extends Place
     super.read(in);
   }
 
+  @Override
   public String toString()
   {
     return "Tavern '"+getName()+"'";

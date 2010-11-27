@@ -1,14 +1,26 @@
 package delta.rpg.actors;
 
-public class Actor
+/**
+ * Base class for all RPG actors.
+ * @author DAM
+ */
+public abstract class Actor
 {
   private String _name;
 
+  /**
+   * Constructor.
+   *
+   */
   public Actor()
   {
     _name="";
   }
 
+  /**
+   * Get actor's name.
+   * @return a name;
+   */
   public String getName()
   {
     return _name;

@@ -1,7 +1,15 @@
 package delta.rpg.actors;
 
-public class Character extends Actor
+/**
+ * Base class for all characters.
+ * @author DAM
+ */
+public abstract class Character extends Actor
 {
+  /**
+   * Constructor.
+   *
+   */
   public Character()
   {
     // Nothing to do !!

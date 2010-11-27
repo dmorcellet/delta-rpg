@@ -17,6 +17,7 @@ public class Store extends Place
     _objects=new ArrayList<RPGObject>();
   }
 
+  @Override
   public int getPlaceType()
   {
     return PlaceType.STORE;
@@ -125,6 +126,7 @@ public class Store extends Place
       }
    }
    */
+  @Override
   protected void write(DataOutputStream out)
       throws IOException
   {
@@ -143,6 +145,7 @@ public class Store extends Place
     super.read(in);
   }
 
+  @Override
   public String toString()
   {
     return "Store '"+getName()+"'";
