@@ -51,6 +51,11 @@ public abstract class Place
     return "Place : "+_name;
   }
 
+  /**
+   * Write the contents of this object to the given data stream.
+   * @param out Output data stream.
+   * @throws IOException If an I/O error occurs.
+   */
   protected void write(DataOutputStream out)
       throws IOException
   {
@@ -58,9 +63,9 @@ public abstract class Place
   }
 
   /**
-   * Read the contents of this object from the specified binary data stream.
-   * @param in Input stream.
-   * @throws IOException
+   * Read the contents of this object from the given data stream.
+   * @param in Input data stream.
+   * @throws IOException If an I/O error occurs.
    */
   protected void read(DataInputStream in)
       throws IOException

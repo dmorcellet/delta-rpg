@@ -8,32 +8,43 @@ import java.util.ArrayList;
 import delta.rpg.spells.Spell;
 import delta.rpg.spells.SpellsRegistry;
 
+/**
+ * Spells book.
+ * @author DAM
+ */
 public class SpellBook extends RPGObject
 {
   private ArrayList<Spell> _spells;
 
+  /**
+   * Constructor.
+   */
   public SpellBook()
   {
     super();
     _spells=new ArrayList<Spell>();
   }
 
-  /**
-   * Get the object's family.
-   * @return the object's family.
-   */
   @Override
   public ObjectFamily getObjectType()
   {
     return ObjectFamily.SPELLBOOK;
   }
 
+  /**
+   * Add a spell.
+   * @param spell Spell to add.
+   */
   public void addSpell(Spell spell)
   {
     _spells.add(spell);
     setMagical(true);
   }
 
+  /**
+   * Remove a spell.
+   * @param spell
+   */
   public void removeSpell(Spell spell)
   {
     _spells.remove(spell);
@@ -43,11 +54,6 @@ public class SpellBook extends RPGObject
     }
   }
 
-  /**
-   * Write the contents of this object to the specified binary data stream.
-   * @param out Output stream.
-   * @throws IOException
-   */
   @Override
   protected void write(DataOutputStream out)
       throws IOException
@@ -63,11 +69,6 @@ public class SpellBook extends RPGObject
     }
   }
 
-  /**
-   * Read the contents of this object from the specified binary data stream.
-   * @param in Input stream.
-   * @throws IOException
-   */
   @Override
   protected void read(DataInputStream in)
       throws IOException

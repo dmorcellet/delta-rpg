@@ -7,12 +7,19 @@ import java.io.IOException;
 import delta.rpg.spells.Spell;
 import delta.rpg.spells.SpellsRegistry;
 
+/**
+ * Potion object.
+ * @author DAM
+ */
 public class Potion extends RPGObject
 {
   private Spell _spell;
   private int _level;
   private int _doses;
 
+  /**
+   * Constructor.
+   */
   public Potion()
   {
     super();
@@ -21,16 +28,18 @@ public class Potion extends RPGObject
     _doses=0;
   }
 
-  /**
-   * Get the object's family.
-   * @return the object's family.
-   */
   @Override
   public ObjectFamily getObjectType()
   {
     return ObjectFamily.POTION;
   }
 
+  /**
+   * Fill this potion with a spell.
+   * @param spell Spell to put.
+   * @param level Level of spell.
+   * @param doses Number of doses.
+   */
   public void fill(Spell spell, int level, int doses)
   {
     _spell=spell;
@@ -39,31 +48,42 @@ public class Potion extends RPGObject
     setMagical(true);
   }
 
+  /**
+   * Indicates if this potion is empty or not.
+   * @return <code>true</code> if it is empty.
+   */
   public boolean isEmpty()
   {
     return((_spell==null)||(_doses==0));
   }
 
+  /**
+   * Get the spell loaded in this potion.
+   * @return A spell or <code>null</code> if no loaded spell.
+   */
   public Spell getSpell()
   {
     return _spell;
   }
 
+  /**
+   * Get the level of the loaded spell.
+   * @return A level.
+   */
   public int getLevel()
   {
     return _level;
   }
 
+  /**
+   * Get the number of doses in the potion.
+   * @return A number of doses.
+   */
   public int getDoses()
   {
     return _doses;
   }
 
-  /**
-   * Write the contents of this object to the specified binary data stream.
-   * @param out Output stream.
-   * @throws IOException
-   */
   @Override
   protected void write(DataOutputStream out)
       throws IOException
@@ -82,11 +102,6 @@ public class Potion extends RPGObject
     }
   }
 
-  /**
-   * Read the contents of this object from the specified binary data stream.
-   * @param in Input stream.
-   * @throws IOException
-   */
   @Override
   protected void read(DataInputStream in)
       throws IOException

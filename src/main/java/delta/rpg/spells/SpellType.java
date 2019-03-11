@@ -10,6 +10,9 @@ import java.util.List;
 public final class SpellType
 {
   private static int _counter=0;
+  /**
+   * List of all spell types.
+   */
   public static final List<SpellType> ALL=new ArrayList<SpellType>();
 
   /**
@@ -40,11 +43,19 @@ public final class SpellType
     ALL.add(this);
   }
 
+  /**
+   * Get the internal code for this spell type.
+   * @return An internal integer code.
+   */
   public int getCode()
   {
     return _code;
   }
 
+  /**
+   * Get the i18n key for this spell type.
+   * @return An i18n key.
+   */
   public String getI18NKey()
   {
     return _i18nKey;

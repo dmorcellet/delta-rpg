@@ -8,10 +8,20 @@ import org.apache.log4j.Logger;
 
 import delta.rpg.utils.RPGLoggers;
 
+/**
+ * I/O methods for RPG objects.
+ * @author DAM
+ */
 public class RPGObjectIO
 {
   private static final Logger _logger=RPGLoggers.getRPGLogger();
 
+  /**
+   * Write the contents of the given object to the given data stream.
+   * @param out Output data stream.
+   * @param o Object to write.
+   * @throws IOException If an I/O error occurs.
+   */
   public static void write(DataOutputStream out, RPGObject o)
       throws IOException
   {
@@ -20,6 +30,12 @@ public class RPGObjectIO
     o.write(out);
   }
 
+  /**
+   * Read the contents of an object from the given data stream.
+   * @param in Input data stream.
+   * @throws IOException If an I/O error occurs.
+   * @return the newly built object.
+   */
   public static RPGObject read(DataInputStream in)
       throws IOException
   {

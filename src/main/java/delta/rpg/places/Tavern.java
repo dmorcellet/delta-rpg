@@ -4,8 +4,15 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 
+/**
+ * Tavern.
+ * @author DAM
+ */
 public class Tavern extends Place
 {
+  /**
+   * Constructor.
+   */
   public Tavern()
   {
   	// Nothing special to do
@@ -24,11 +31,6 @@ public class Tavern extends Place
     super.write(out);
   }
 
-  /**
-   * Read the contents of this object from the specified binary data stream.
-   * @param in Input stream.
-   * @throws IOException
-   */
   @Override
   protected void read(DataInputStream in)
       throws IOException

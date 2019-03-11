@@ -43,6 +43,11 @@ public class BankAccount
     return _amount;
   }
 
+  /**
+   * Write the contents of this object to the given data stream.
+   * @param out Output data stream.
+   * @throws IOException If an I/O error occurs.
+   */
   public void write(DataOutputStream out)
       throws IOException
   {
@@ -50,6 +55,11 @@ public class BankAccount
     _amount.write(out);
   }
 
+  /**
+   * Read the contents of this object from the given data stream.
+   * @param in Input data stream.
+   * @throws IOException If an I/O error occurs.
+   */
   public void read(DataInputStream in)
       throws IOException
   {

@@ -4,8 +4,15 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 
+/**
+ * Transport company.
+ * @author DAM
+ */
 public class TransportCompany extends Place
 {
+  /**
+   * Constructor.
+   */
   public TransportCompany()
   {
   	// Nothing special to do
@@ -24,11 +31,6 @@ public class TransportCompany extends Place
     super.write(out);
   }
 
-  /**
-   * Read the contents of this object from the specified binary data stream.
-   * @param in Input stream.
-   * @throws IOException
-   */
   @Override
   protected void read(DataInputStream in)
       throws IOException

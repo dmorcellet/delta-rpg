@@ -7,11 +7,18 @@ import java.io.IOException;
 import delta.rpg.spells.Spell;
 import delta.rpg.spells.SpellsRegistry;
 
+/**
+ * Scroll object.
+ * @author DAM
+ */
 public class Scroll extends RPGObject
 {
   private Spell _spell;
   private int _level;
 
+  /**
+   * Constructor.
+   */
   public Scroll()
   {
     super();
@@ -19,26 +26,35 @@ public class Scroll extends RPGObject
     _level=0;
   }
 
-  /**
-   * Get the object's family.
-   * @return the object's family.
-   */
   @Override
   public ObjectFamily getObjectType()
   {
     return ObjectFamily.SCROLL;
   }
 
+  /**
+   * Get the spell inscribed on this scroll.
+   * @return A spell or <code>null</code> if nothing inscribed.
+   */
   public Spell getSpell()
   {
     return _spell;
   }
 
+  /**
+   * Get the level of the spell inscribed on this scroll.
+   * @return A level or 0 is no spell.
+   */
   public int getLevel()
   {
     return _level;
   }
 
+  /**
+   * Set the spell inscribed on this scroll.
+   * @param spell Spell to write.
+   * @param level Level of the spell.
+   */
   public void setSpell(Spell spell, int level)
   {
     _spell=spell;
@@ -46,16 +62,15 @@ public class Scroll extends RPGObject
     setMagical(true);
   }
 
+  /**
+   * Indicates if this potion is empty or not.
+   * @return <code>true</code> if it is empty.
+   */
   public boolean isEmpty()
   {
     return(_spell!=null);
   }
 
-  /**
-   * Write the contents of this object to the specified binary data stream.
-   * @param out Output stream.
-   * @throws IOException
-   */
   @Override
   protected void write(DataOutputStream out)
       throws IOException
@@ -73,11 +88,6 @@ public class Scroll extends RPGObject
     }
   }
 
-  /**
-   * Read the contents of this object from the specified binary data stream.
-   * @param in Input stream.
-   * @throws IOException
-   */
   @Override
   protected void read(DataInputStream in)
       throws IOException

@@ -7,6 +7,10 @@ import java.io.IOException;
 import delta.rpg.spells.Spell;
 import delta.rpg.spells.SpellsRegistry;
 
+/**
+ * Magic wand.
+ * @author DAM
+ */
 public class MagicWand extends RPGObject
 {
   private Spell _spell;
@@ -14,6 +18,9 @@ public class MagicWand extends RPGObject
   private int _charges;
   private int _maxCharges;
 
+  /**
+   * Constructor.
+   */
   public MagicWand()
   {
     super();
@@ -23,16 +30,18 @@ public class MagicWand extends RPGObject
     _maxCharges=0;
   }
 
-  /**
-   * Get the object's family.
-   * @return the object's family.
-   */
   @Override
   public ObjectFamily getObjectType()
   {
     return ObjectFamily.MAGIC_WAND;
   }
 
+  /**
+   * Load a spell into this wand.
+   * @param spell Spell to load.
+   * @param level Spell level.
+   * @param charges Number of charges to load.
+   */
   public void load(Spell spell, int level, int charges)
   {
     _spell=spell;
@@ -42,31 +51,42 @@ public class MagicWand extends RPGObject
     setMagical(true);
   }
 
+  /**
+   * Indicates if this wand is empty or not.
+   * @return <code>true</code> if it is, <code>false</code> otherwise.
+   */
   public boolean isEmpty()
   {
     return((_spell==null)||(_charges==0));
   }
 
+  /**
+   * Get the loaded spell.
+   * @return A spell or <code>null</code> if no loaded spell.
+   */
   public Spell getSpell()
   {
     return _spell;
   }
 
+  /**
+   * Get the level of the loaded spell.
+   * @return A level.
+   */
   public int getLevel()
   {
     return _level;
   }
 
+  /**
+   * Get the number of charges in the wand.
+   * @return A number of charges.
+   */
   public int getCharges()
   {
     return _charges;
   }
 
-  /**
-   * Write the contents of this object to the specified binary data stream.
-   * @param out Output stream.
-   * @throws IOException
-   */
   @Override
   protected void write(DataOutputStream out)
       throws IOException
@@ -86,11 +106,6 @@ public class MagicWand extends RPGObject
     }
   }
 
-  /**
-   * Read the contents of this object from the specified binary data stream.
-   * @param in Input stream.
-   * @throws IOException
-   */
   @Override
   protected void read(DataInputStream in)
       throws IOException

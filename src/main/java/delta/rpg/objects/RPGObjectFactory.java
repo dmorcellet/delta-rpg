@@ -6,6 +6,10 @@ import org.apache.log4j.Logger;
 
 import delta.rpg.utils.RPGLoggers;
 
+/**
+ * Factory for RPG objects.
+ * @author DAM
+ */
 public class RPGObjectFactory
 {
   private static final Logger _logger=RPGLoggers.getRPGLogger();
@@ -13,6 +17,10 @@ public class RPGObjectFactory
   private static RPGObjectFactory _instance=null;
   private HashMap<Integer, Class<RPGObject>> _entries;
 
+  /**
+   * Get the sole instance of this class.
+   * @return the sole instance of this class.
+   */
   public static RPGObjectFactory getInstance()
   {
     if(_instance==null)
@@ -22,11 +30,19 @@ public class RPGObjectFactory
     return _instance;
   }
 
+  /**
+   * Constructor.
+   */
   protected RPGObjectFactory()
   {
     _entries=new HashMap<Integer, Class<RPGObject>>();
   }
 
+  /**
+   * Add an object type.
+   * @param objectType Object type.
+   * @param implementation Associated implementation class.
+   */
   public void add(int objectType, Class<RPGObject> implementation)
   {
     if(RPGObject.class.isAssignableFrom(implementation))
@@ -39,6 +55,11 @@ public class RPGObjectFactory
     }
   }
 
+  /**
+   * Build an object instance.
+   * @param objectType Object type.
+   * @return the newly built object instance, or <code>null</code> if a problem occurred.
+   */
   public RPGObject build(int objectType)
   {
     RPGObject ret=null;

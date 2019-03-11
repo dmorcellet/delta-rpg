@@ -5,6 +5,10 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * Container for objects.
+ * @author DAM
+ */
 public class Container extends RPGObject
 {
   private ArrayList<RPGObject> _objects;
@@ -14,6 +18,9 @@ public class Container extends RPGObject
   private int _maxWeigth;
   private int _maxVolume;
 
+  /**
+   * Constructor.
+   */
   public Container()
   {
     super();
@@ -25,16 +32,17 @@ public class Container extends RPGObject
     _maxVolume=Integer.MAX_VALUE;
   }
 
-  /**
-   * Get the object's family.
-   * @return the object's family.
-   */
   @Override
   public ObjectFamily getObjectType()
   {
     return ObjectFamily.CONTAINER;
   }
 
+  /**
+   * Add an object in this container.
+   * @param object Object to add.
+   * @return <code>true</code> if it was added, <code>false</code> if it was not (due to volume/weight constraints).
+   */
   public boolean addObject(RPGObject object)
   {
     boolean ret=false;
@@ -65,11 +73,6 @@ public class Container extends RPGObject
     return _totalWeight;
   }
 
-  /**
-   * Write the contents of this object to the specified binary data stream.
-   * @param out Output stream.
-   * @throws IOException
-   */
   @Override
   protected void write(DataOutputStream out)
       throws IOException
@@ -89,11 +92,6 @@ public class Container extends RPGObject
     }
   }
 
-  /**
-   * Read the contents of this object from the specified binary data stream.
-   * @param in Input stream.
-   * @throws IOException
-   */
   @Override
   protected void read(DataInputStream in)
       throws IOException

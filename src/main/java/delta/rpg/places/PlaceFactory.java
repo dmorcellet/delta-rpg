@@ -6,6 +6,10 @@ import org.apache.log4j.Logger;
 
 import delta.rpg.utils.RPGLoggers;
 
+/**
+ * Factory for places.
+ * @author DAM
+ */
 public class PlaceFactory
 {
   private static final Logger _logger=RPGLoggers.getRPGLogger();
@@ -13,6 +17,10 @@ public class PlaceFactory
   private static PlaceFactory _instance=null;
   private HashMap<Integer,Class<Place>> _entries;
 
+  /**
+   * Get the sole instance of this class.
+   * @return the sole instance of this class.
+   */
   public static PlaceFactory getInstance()
   {
     if(_instance==null)
@@ -27,6 +35,11 @@ public class PlaceFactory
     _entries=new HashMap<Integer,Class<Place>>();
   }
 
+  /**
+   * Add an place type.
+   * @param placeType Place type.
+   * @param implementation Associated implementation class.
+   */
   public void add(int placeType, Class<Place> implementation)
   {
     if(Place.class.isAssignableFrom(implementation))
@@ -39,6 +52,11 @@ public class PlaceFactory
     }
   }
 
+  /**
+   * Build a place instance.
+   * @param placeType Place type.
+   * @return the newly built place instance, or <code>null</code> if a problem occurred.
+   */
   public Place build(int placeType)
   {
     Place ret=null;

@@ -7,7 +7,7 @@ package delta.rpg.objects;
 public final class ObjectFamily
 {
   private static int _counter=0;
-  
+
   private int _code;
   private String _i18nKey;
 

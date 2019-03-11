@@ -7,10 +7,17 @@ import java.util.ArrayList;
 
 import delta.rpg.objects.RPGObject;
 
+/**
+ * Store.
+ * @author DAM
+ */
 public class Store extends Place
 {
   private ArrayList<RPGObject> _objects;
 
+  /**
+   * Constructor.
+   */
   public Store()
   {
     super();
@@ -23,6 +30,10 @@ public class Store extends Place
     return PlaceType.STORE;
   }
 
+  /**
+   * Add an item in this store.
+   * @param object Object to add.
+   */
   public void addObject(RPGObject object)
   {
     _objects.add(object);
@@ -133,11 +144,6 @@ public class Store extends Place
     super.write(out);
   }
 
-  /**
-   * Read the contents of this object from the specified binary data stream.
-   * @param in Input stream.
-   * @throws IOException
-   */
   @Override
   protected void read(DataInputStream in)
       throws IOException

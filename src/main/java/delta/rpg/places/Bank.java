@@ -8,11 +8,18 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
+/**
+ * Bank.
+ * @author DAM
+ */
 public class Bank extends Place
 {
   private int _lastAccountID;
   private HashMap<Integer, BankAccount> _accounts;
 
+  /**
+   * Constructor.
+   */
   public Bank()
   {
     _lastAccountID=0;
@@ -25,6 +32,10 @@ public class Bank extends Place
     return PlaceType.BANK;
   }
 
+  /**
+   * Create a new account.
+   * @return the newly created account.
+   */
   public BankAccount createNewAccount()
   {
     _lastAccountID++;
@@ -33,11 +44,20 @@ public class Bank extends Place
     return ret;
   }
 
+  /**
+   * Get an account using its identifier.
+   * @param id Identifier of the account to get.
+   * @return An account or <code>null</code> if not found.
+   */
   public BankAccount getAccount(int id)
   {
     return _accounts.get(Integer.valueOf(id));
   }
 
+  /**
+   * Close/remove an account.
+   * @param id Identifier of the account to remove.
+   */
   public void closeAccount(int id)
   {
     _accounts.remove(Integer.valueOf(id));
@@ -61,11 +81,6 @@ public class Bank extends Place
     }
   }
 
-  /**
-   * Read the contents of this object from the specified binary data stream.
-   * @param in Input stream.
-   * @throws IOException
-   */
   @Override
   protected void read(DataInputStream in)
       throws IOException

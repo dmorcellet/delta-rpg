@@ -4,8 +4,15 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 
+/**
+ * Fountain.
+ * @author DAM
+ */
 public class Fountain extends Place
 {
+  /**
+   * Constructor.
+   */
   public Fountain()
   {
     // Nothing to do !!
@@ -24,11 +31,6 @@ public class Fountain extends Place
     super.write(out);
   }
 
-  /**
-   * Read the contents of this object from the specified binary data stream.
-   * @param in Input stream.
-   * @throws IOException
-   */
   @Override
   protected void read(DataInputStream in)
       throws IOException

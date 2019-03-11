@@ -11,7 +11,7 @@ public class SpellStatistics
    */
   private Spell _spell;
   /**
-   * Number of successfull casts.
+   * Number of successful casts.
    */
   private int _success;
   /**
@@ -31,7 +31,7 @@ public class SpellStatistics
   /**
    * Full constructor.
    * @param spell Involved spell.
-   * @param success Number of successfull casts.
+   * @param success Number of successful casts.
    * @param failures Number of failed casts.
    */
   public SpellStatistics(Spell spell, int success, int failures)
@@ -51,7 +51,7 @@ public class SpellStatistics
   }
 
   /**
-   * Add a new successfull cast.
+   * Add a new successful cast.
    */
   public void addSuccess()
   {
@@ -67,8 +67,8 @@ public class SpellStatistics
   }
 
   /**
-   * Get the number of sucessfull casts.
-   * @return the number of sucessfull casts.
+   * Get the number of successful casts.
+   * @return the number of successful casts.
    */
   public int getSuccess()
   {
