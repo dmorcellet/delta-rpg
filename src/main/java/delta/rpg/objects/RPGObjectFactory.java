@@ -4,15 +4,13 @@ import java.util.HashMap;
 
 import org.apache.log4j.Logger;
 
-import delta.rpg.utils.RPGLoggers;
-
 /**
  * Factory for RPG objects.
  * @author DAM
  */
 public class RPGObjectFactory
 {
-  private static final Logger _logger=RPGLoggers.getRPGLogger();
+  private static final Logger LOGGER=Logger.getLogger(RPGObjectFactory.class);
 
   private static RPGObjectFactory _instance=null;
   private HashMap<Integer, Class<RPGObject>> _entries;
@@ -51,7 +49,7 @@ public class RPGObjectFactory
     }
     else
     {
-      _logger.error("Class"+implementation.getName()+" is not a subclass of RPGObject");
+      LOGGER.error("Class"+implementation.getName()+" is not a subclass of RPGObject");
     }
   }
 
@@ -73,7 +71,7 @@ public class RPGObjectFactory
       }
       catch(Exception e)
       {
-        _logger.error("Cannot build RPG object",e);
+        LOGGER.error("Cannot build RPG object",e);
       }
     }
     return ret;

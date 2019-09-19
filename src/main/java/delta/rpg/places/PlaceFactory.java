@@ -4,15 +4,13 @@ import java.util.HashMap;
 
 import org.apache.log4j.Logger;
 
-import delta.rpg.utils.RPGLoggers;
-
 /**
  * Factory for places.
  * @author DAM
  */
 public class PlaceFactory
 {
-  private static final Logger _logger=RPGLoggers.getRPGLogger();
+  private static final Logger LOGGER=Logger.getLogger(PlaceFactory.class);
 
   private static PlaceFactory _instance=null;
   private HashMap<Integer,Class<Place>> _entries;
@@ -48,7 +46,7 @@ public class PlaceFactory
     }
     else
     {
-      _logger.error("Class"+implementation.getName()+" is not a subclass of Place");
+      LOGGER.error("Class"+implementation.getName()+" is not a subclass of Place");
     }
   }
 
@@ -70,7 +68,7 @@ public class PlaceFactory
       }
       catch(Exception e)
       {
-        _logger.error("Cannot build place", e);
+        LOGGER.error("Cannot build place", e);
       }
     }
     return ret;

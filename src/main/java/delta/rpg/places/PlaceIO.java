@@ -6,15 +6,13 @@ import java.io.IOException;
 
 import org.apache.log4j.Logger;
 
-import delta.rpg.utils.RPGLoggers;
-
 /**
  * I/O methods for RPG places.
  * @author DAM
  */
 public class PlaceIO
 {
-  private static final Logger _logger=RPGLoggers.getRPGLogger();
+  private static final Logger LOGGER=Logger.getLogger(PlaceIO.class);
 
   /**
    * Write the contents of the given object to the given data stream.
@@ -47,7 +45,7 @@ public class PlaceIO
     }
     else
     {
-      _logger.error("Cannot build a place of type : "+type);
+      LOGGER.error("Cannot build a place of type : "+type);
     }
     return ret;
   }

@@ -6,15 +6,13 @@ import java.io.IOException;
 
 import org.apache.log4j.Logger;
 
-import delta.rpg.utils.RPGLoggers;
-
 /**
  * I/O methods for RPG objects.
  * @author DAM
  */
 public class RPGObjectIO
 {
-  private static final Logger _logger=RPGLoggers.getRPGLogger();
+  private static final Logger LOGGER=Logger.getLogger(RPGObjectIO.class);
 
   /**
    * Write the contents of the given object to the given data stream.
@@ -48,7 +46,7 @@ public class RPGObjectIO
     }
     else
     {
-      _logger.error("Cannot build an object of type : "+type);
+      LOGGER.error("Cannot build an object of type : "+type);
     }
     return ret;
   }
